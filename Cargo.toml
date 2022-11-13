@@ -1,0 +1,17 @@
+[package]
+name = "hal_s3"
+version = "0.1.0"
+authors = ["shevtsov_ajax <shevtsov@ajax.systems>"]
+edition = "2021"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+esp32s3-hal = "0.2.0"
+
+esp-backtrace = { version = "0.2.0", features = ["esp32s3", "panic-handler", "print-uart"] }
+
+xtensa-lx-rt = { version = "0.13.0", features = ["esp32s3"], optional = true }
+
+[features]
+default = ["rt"]
+rt = ["xtensa-lx-rt"]
